@@ -1,0 +1,5 @@
+project_id: darwin
+subject_id: trainingdata
+resource_name: NIFTI
+server_location: http://vht-dev.shef.ac.uk
+local_data_folder: /home/aca19jmc/Downloads/training_source/
