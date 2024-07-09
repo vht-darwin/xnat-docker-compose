@@ -51,7 +51,11 @@ $ cp default.env .env
         * The `TOMCAT_XNAT_FOLDER` build argument is set to `ROOT` by default; this means the XNAT will be available at `http://localhost`. If, instead, you wish it to be at `http://localhost/xnat` or, more generally, at `http://localhost/{something}`, you can set `TOMCAT_XNAT_FOLDER` to the value `something`.
         * If you need to control some arguments that get sent to tomcat on startup, you can modify the `CATALINA_OPTS` environment variable (under `services → xnat-web → environment`).
     - **xnat/Dockerfile**: Builds the xnat-web image from a tomcat docker image.
-
+    - **xnat/auth**: Supports additional openid providers for login. By default google is supported but other open complient providers can be added.
+	* To enable google OAuth 2.0 login, set siteURL to what the site will be accessed on. Don't end this with a /
+	* Your site needs to be registered here: https://console.cloud.google.com/apis/credentials
+	* Find more information here: https://cloud.google.com/docs/authentication?_gl=1*2vj02v*_ga*MTkxMDIzMTE5Mi4xNzIwMDk1NTE5*_ga_WH2QY8WWF5*MTcyMDUyNTEyNy45LjEuMTcyMDUyNTE1NC4zMy4wLjA.&_ga=2.31290239.-1910231192.1720095519#oauth2
+	* Once the site is running, as an admin access the security pannel and add "google" as an additional "Enabled Authentication Provider" More info here: https://wiki.xnat.org/documentation/configuring-authentication-providers
 4. Start the system
 
 ```

@@ -42,4 +42,7 @@ fi
 mkdir -p /usr/local/share/xnat
 find $XNAT_HOME/config -mindepth 1 -maxdepth 1 -type f -exec cp {} /usr/local/share/xnat \;
 
-
+# Copy the auth folder and its contents
+if [ -d "/usr/local/share/xnat/auth" ]; then
+  cp -r /usr/local/share/xnat/auth $XNAT_HOME/config/
+fi
